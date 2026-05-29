@@ -1,26 +1,33 @@
 @import "tailwindcss";
 
+@theme {
+  --color-background: #000000;
+  --color-foreground: #ffffff;
+  --font-sans: "Geist Var", "Inter", "San Francisco", "Helvetica Neue", sans-serif;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #000000;
+  --foreground: #ffffff;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
+
+/* Custom Utilities for scrollytelling */
+.text-glow {
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.gradient-text {
+  background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0.6) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
